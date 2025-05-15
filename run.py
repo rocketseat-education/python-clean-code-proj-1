@@ -1,3 +1,4 @@
+from src.main.process_handler import start
 
-def add(x: int, y: float) -> float:
-    return x + y
+if __name__ == "__main__":
+    start()
