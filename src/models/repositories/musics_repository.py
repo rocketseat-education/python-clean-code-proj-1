@@ -1,7 +1,7 @@
 from src.models.entities.music import Music
 
 
-class MusicsRepository:
+class __MusicsRepository:
     def __init__(self):
         self.__music_list = []
 
@@ -13,5 +13,11 @@ class MusicsRepository:
             if music.title == title:
                 return music
 
-    def get_all_musics(self) -> list[Music]:
+        return None
+
+    def get_all_songs(self) -> list[Music]:
         return self.__music_list
+
+
+# Singleton - Design Pattern
+musics_repository = __MusicsRepository()
