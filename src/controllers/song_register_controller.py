@@ -9,15 +9,13 @@ class SongRegisterController:
         except Exception as exception:
             self.__format_error_response(exception)
 
-
-    def __verify_if_song_already_registered(self, new_song_informations: dict) -> None:
-        if len(new_song_informations["title"]) > 100
+    def __verify_if_song_already_registered(self, new_song_informations: dict) -> None:  # noqa
+        if len(new_song_informations["title"]) > 100:
             raise Exception("Titulo de musica com mais de 100 caracteres")
 
         year = int(new_song_informations["year"])
         if year >= 2026:
             raise Exception("Ano de musica inválido")
-
 
     def __verify_songs_infos(self, new_song_informations: dict) -> None:
         pass
@@ -33,7 +31,6 @@ class SongRegisterController:
                 "title": new_song_informations["title"]
             }
         }
-
 
     def __format_error_response(self, err: Exception) -> dict:
         return {
